@@ -153,6 +153,7 @@ public class GlobalTransactionalInterceptor implements ConfigurationChangeListen
             final GlobalTransactional globalTransactionalAnnotation =
                 getAnnotation(method, targetClass, GlobalTransactional.class);
             final GlobalLock globalLockAnnotation = getAnnotation(method, targetClass, GlobalLock.class);
+            // 判断方式是否有@GlobalTransactional或@GlobalLock注解
             boolean localDisable = disable || (degradeCheck && degradeNum >= degradeCheckAllowTimes);
             if (!localDisable) {
                 if (globalTransactionalAnnotation != null || this.aspectTransactional != null) {
@@ -169,6 +170,7 @@ public class GlobalTransactionalInterceptor implements ConfigurationChangeListen
                     } else {
                         transactional = this.aspectTransactional;
                     }
+                    // 在切面中执行事务相关逻辑
                     return handleGlobalTransaction(methodInvocation, transactional);
                 } else if (globalLockAnnotation != null) {
                     return handleGlobalLock(methodInvocation, globalLockAnnotation);
@@ -199,6 +201,7 @@ public class GlobalTransactionalInterceptor implements ConfigurationChangeListen
         final AspectTransactional aspectTransactional) throws Throwable {
         boolean succeed = true;
         try {
+            // 拦截到事务方法后 TM测事务入口类
             return transactionalTemplate.execute(new TransactionalExecutor() {
                 @Override
                 public Object execute() throws Throwable {

@@ -119,6 +119,7 @@ public class TransactionalTemplate {
             try {
                 // 2. If the tx role is 'GlobalTransactionRole.Launcher', send the request of beginTransaction to TC,
                 //    else do nothing. Of course, the hooks will still be triggered.
+                // 开启全局事务
                 beginTransaction(txInfo, tx);
 
                 Object rs;
@@ -127,6 +128,7 @@ public class TransactionalTemplate {
                     rs = business.execute();
                 } catch (Throwable ex) {
                     // 3. The needed business exception to rollback.
+                    //进入异常处理流程
                     completeTransactionAfterThrowing(txInfo, tx, ex);
                     throw ex;
                 }
@@ -176,9 +178,11 @@ public class TransactionalTemplate {
         //roll back
         if (txInfo != null && txInfo.rollbackOn(originalException)) {
             try {
+                //进行回滚， 在这里通过rpc通知tc 回滚事务
                 rollbackTransaction(tx, originalException);
             } catch (TransactionException txe) {
                 // Failed to rollback
+                // 在这里抛code 给模板的上层既 interceptor
                 throw new TransactionalExecutor.ExecutionException(tx, txe,
                         TransactionalExecutor.Code.RollbackFailure, originalException);
             }

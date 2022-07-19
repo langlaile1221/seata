@@ -29,6 +29,9 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author spilledyear@outlook.com
+ * ommandLineRunner接口主要用于实现在应用初始化后，去执行一段代码块逻辑，这段初始化代码在整个应用生命周期内只会执行一次。
+ * InitializingBean 
+ * DisposableBean bean允许在容器销毁该bean的时候获得一次回调
  */
 @Component
 public class ServerRunner implements CommandLineRunner, DisposableBean {
