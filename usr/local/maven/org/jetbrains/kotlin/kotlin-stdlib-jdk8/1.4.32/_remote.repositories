@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Jul 08 17:54:21 CST 2022
+kotlin-stdlib-jdk8-1.4.32-sources.jar>nexus=
+kotlin-stdlib-jdk8-1.4.32.pom>nexus=
+kotlin-stdlib-jdk8-1.4.32.jar>nexus=

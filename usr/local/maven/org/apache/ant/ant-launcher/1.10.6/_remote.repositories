@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Jul 08 17:53:55 CST 2022
+ant-launcher-1.10.6-sources.jar>nexus=
+ant-launcher-1.10.6.pom>nexus=
+ant-launcher-1.10.6.jar>nexus=

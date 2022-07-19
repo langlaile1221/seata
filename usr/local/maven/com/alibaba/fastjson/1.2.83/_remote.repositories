@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Jul 08 17:53:52 CST 2022
+fastjson-1.2.83.pom>nexus=
+fastjson-1.2.83.jar>nexus=
+fastjson-1.2.83-sources.jar>nexus=

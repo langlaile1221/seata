@@ -356,13 +356,17 @@ public class FileConfiguration extends AbstractConfiguration {
     class FileListener implements ConfigurationChangeListener {
 
         private final Map<String, Set<ConfigurationChangeListener>> dataIdMap = new HashMap<>();
-
+        /**
+         * 在ConfiguationChangeListener#onProcessEvent方法中用到
+         */
         private final ExecutorService executor = new ThreadPoolExecutor(CORE_LISTENER_THREAD, MAX_LISTENER_THREAD, 0L,
                 TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(),
                 new NamedThreadFactory("fileListener", MAX_LISTENER_THREAD));
 
         /**
          * Instantiates a new FileListener.
+         * dataId为订阅的配置属性
+         * listener: 配置定于时间监听器,用于真正的变更逻辑, 同样实现了ConfigurationChangeListener接口
          */
         FileListener() {}
 

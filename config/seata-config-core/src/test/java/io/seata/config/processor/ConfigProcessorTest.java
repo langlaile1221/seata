@@ -15,6 +15,8 @@
  */
 package io.seata.config.processor;
 
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -58,6 +60,14 @@ class ConfigProcessorTest {
         dataType = ConfigProcessor.resolverConfigDataType("", "a", "properties");
         Assertions.assertEquals(dataType, "properties");
 
+    }
+
+    @Test
+    public void test() {
+        Config load = ConfigFactory.load();
+        System.out.println(load.getString("simple-lib.foo"));
+        System.out.println(load.getString("simple-lib.whatever"));
+        System.out.println(load.getString("simple-app.answer"));
     }
 
 

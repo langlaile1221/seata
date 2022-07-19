@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Jul 08 17:54:01 CST 2022
+kotlinx-coroutines-core-jvm-1.4.3-sources.jar>nexus=
+kotlinx-coroutines-core-jvm-1.4.3.pom>nexus=
+kotlinx-coroutines-core-jvm-1.4.3.jar>nexus=

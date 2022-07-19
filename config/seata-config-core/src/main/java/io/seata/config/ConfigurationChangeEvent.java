@@ -21,12 +21,17 @@ package io.seata.config;
  * @author slievrly
  */
 public class ConfigurationChangeEvent {
-
+    // 订阅的配置属性
     private String dataId;
+    //旧值
     private String oldValue;
+    //新值
     private String newValue;
+    //
     private String namespace;
+    //配置变更类型
     private ConfigurationChangeType changeType;
+    //默认的namespace
     private static final String DEFAULT_NAMESPACE = "DEFAULT";
 
 

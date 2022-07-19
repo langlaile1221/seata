@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Jul 08 17:54:05 CST 2022
+jprotobuf-1.11.11-sources.jar>nexus=
+jprotobuf-1.11.11.jar>nexus=
+jprotobuf-1.11.11.pom>nexus=

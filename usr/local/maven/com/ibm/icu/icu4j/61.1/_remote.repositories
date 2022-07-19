@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Jul 08 17:54:18 CST 2022
+icu4j-61.1.pom>nexus=
+icu4j-61.1.jar>nexus=
+icu4j-61.1-sources.jar>nexus=
